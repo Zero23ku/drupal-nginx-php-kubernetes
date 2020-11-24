@@ -1,8 +1,9 @@
 # This Dockerfile provides a base level of OS packages with PHP-CLI and extensions
 
-FROM registry.ng.bluemix.net/alexanderallen/php-fpm:latest
+#FROM registry.ng.bluemix.net/alexanderallen/php-fpm:latest
+FROM php-fpm:ibm-test
 
-# Specify $COMPOSER_HOME.
+# Specify $COMPOSER_HOME.s
 ENV COMPOSER_HOME /.root
 
 # Add global binary directory to PATH.

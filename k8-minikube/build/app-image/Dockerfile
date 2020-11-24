@@ -8,19 +8,22 @@
 # Reference:
 # - https://getcomposer.org/doc/03-cli.md#create-project
 
-FROM registry.ng.bluemix.net/alexanderallen/php-cli:latest
+#FROM registry.ng.bluemix.net/alexanderallen/php-cli:latest
+
+FROM php-cli:ibm-test
 
 # todo: find and check in composer.lock for application.
-
+RUN ls
 # Install Drupal app.
 RUN \
+  #Configure php memory limit
+  php -d memory_limit=-1 `which composer` update \
   # Create app directory.
-  mkdir /app \
+  && mkdir /app \
   # Install Drupal to app directory.
   && composer create-project \
-    drupal-composer/drupal-project:8.x-dev \
+    drupal/recommended-project:8.8.11 \
     /app/ \
-    --stability dev \
     --no-interaction \
     --no-progress
 

@@ -29,7 +29,7 @@ WORKDIR $COMPOSER_HOME
 
 # RUN composer dump-autoload --optimize && composer run-script post-install-cmd
 
-RUN composer require drush/drush:8.x
+RUN composer self-update --1 && composer require drush/drush:8.x
 
 # Copy start script
 COPY noop.php /root/

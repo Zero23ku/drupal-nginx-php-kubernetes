@@ -16,7 +16,7 @@ RUN apt-get update && apt-get install -y curl git vim libfcgi0ldbl
 RUN set -ex \
 	&& buildDeps=' \
 		libjpeg62-turbo-dev \
-		libpng12-dev \
+		libpng-dev \
 		libpq-dev \
     zlib1g-dev \
     libicu-dev \
